@@ -11,7 +11,6 @@ def get_count():
     ''' Retreive the number of comments '''
     comment_count_url = 'https://api.imgur.com/3/account/{}/comments/count'.format(username)
     r = requests.get(comment_count_url, headers={'Authorization': client_id})
-    print(r.status_code)
     content = r.content
     content_str = content.decode("utf-8")
     content_json = json.loads(content_str)
