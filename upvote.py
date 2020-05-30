@@ -44,8 +44,6 @@ def upvote(lst):
     while len(lst) > 0:
         comment_upvote_url = 'https://api.imgur.com/3/comment/{}/vote/up'.format(comment_id)
         r = requests.get(comment_upvote_url,  headers={'Authorization': client_token})
-        print(r.status_code)
-        print(r.content)
         if r.status_code == 200:
             print('Upvote on Comment ID {} was successful'.format(lst[0]))
             lst.pop(0)
